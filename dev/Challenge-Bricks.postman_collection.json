@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "7a481c5f-75ef-4334-82eb-829309ae5a70",
+		"name": "Challenge-Bricks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21309259"
+	},
+	"item": [
+		{
+			"name": "backoffice",
+			"item": [
+				{
+					"name": "Job-Execute",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL_LOCAL}}/api/v1/job/execute/JOB_UPDATE_CATEGORY_LIST",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"job",
+								"execute",
+								"JOB_UPDATE_CATEGORY_LIST"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CATEGORY",
+			"item": [
+				{
+					"name": "LIST",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "es",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_LOCAL}}/api/challenge/v1/category/list",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"api",
+								"challenge",
+								"v1",
+								"category",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCT",
+			"item": [
+				{
+					"name": "LIST",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nuevo producto 1\",\r\n    \"price\": null,\r\n    \"stock\": null,\r\n    \"category\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_LOCAL}}/api/challenge/v1/product/list?offset=0&limit=5&sort=productId",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"api",
+								"challenge",
+								"v1",
+								"product",
+								"list"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "productId"
+								},
+								{
+									"key": "filter",
+									"value": "ew0KICAgICJuYW1lIjogIm51ZXZvIiwNCiAgICAicHJpY2UiOiBudWxsLA0KICAgICJzdG9jayI6IG51bGwsDQogICAgImNhdGVnb3J5IjogbnVsbA0KfQ==",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nuevo producto 1\",\r\n    \"price\":150.50,\r\n    \"stock\":25,\r\n    \"categoryId\":7,\r\n    \"active\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_LOCAL}}/api/challenge/v1/product/create",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"api",
+								"challenge",
+								"v1",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_LOCAL}}/api/challenge/v1/product/find/1",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"api",
+								"challenge",
+								"v1",
+								"product",
+								"find",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"nuevo producto 2\",\r\n    \"price\":20.50,\r\n    \"stock\":75,\r\n    \"categoryId\":2,\r\n    \"active\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_LOCAL}}/api/challenge/v1/product/update/1",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"api",
+								"challenge",
+								"v1",
+								"product",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_LOCAL}}/api/challenge/v1/product/delete/1",
+							"host": [
+								"{{URL_LOCAL}}"
+							],
+							"path": [
+								"api",
+								"challenge",
+								"v1",
+								"product",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_LOCAL",
+			"value": "http://localhost:8080"
+		}
+	]
+}
