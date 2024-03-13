@@ -1,5 +1,5 @@
-# Bricks-Challenge
-Challenge técnico proceso de seleccion para puesto Java dev SSR, el proyecto es una API que administra productos de un comercio
+# Proyectito
+Proyectito
 
 # Requisitos Previos
 Tener instalado Java 17 y Postman
